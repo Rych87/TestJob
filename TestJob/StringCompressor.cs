@@ -16,24 +16,26 @@ namespace TestJob
             StringBuilder sb = new StringBuilder();
 
             char? prevChar = null;
-            int charOccurency = 0;
+            int charOccurency = 1;
             for (int i = 0; i < charArray.Length; i++) 
             {
                 char currChar = charArray[i];
                 if(currChar == prevChar)
                 {
                     charOccurency++;
+                    if (i + 1 == charArray.Length) sb.Append(charOccurency);    // последний символ
                 }
                 else
                 {
-                    sb.Append(prevChar);
                     if (charOccurency > 1)
+                    {
                         sb.Append(charOccurency);
-                    charOccurency = 1;
+                        charOccurency = 1;
+                    }
+                    sb.Append(currChar);
                 }
                 prevChar = currChar;
             }
-            sb.Append(prevChar);
             return sb.ToString();
         }
     }
