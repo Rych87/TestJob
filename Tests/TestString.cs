@@ -3,7 +3,7 @@
 namespace Tests
 {
     [TestClass]
-    public sealed class TestClass
+    public sealed class TestString
     {
         [TestMethod]
         public void TestStringCompressor()
